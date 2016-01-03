@@ -1,20 +1,22 @@
 ---
 layout: project
-title: EOG Eye Tracking
-date: 10/2014 to 03/2015
-image: eog.png
+title: Human on Roller Coaster
+date: 12/2015
+image: roller_coaster_ride_abstract_human.jpg
 ---
 
 ## Overview
-The E.O.G (Electrooculography) is the technique for measuring the potential difference.  In the my application, the measuring system can be decomposed into the three active electrodes mounted on goggles, the amplifier and filter circuit and the oscilloscope to display the resulting signal (Electrooculogram). Pairs of the electrodes are needed for measuring Electrooculogram. The pair placed on the left and right detects the horizontal eye movements.Although blinking signal is mainly a vertical eye movement, it can be detected in horizontal channel, which is normally a spike with much shorter time duration than horizontal eye movement but usually bigger potential difference between two electrodes.
+This is the final project for the course: ME314 Machine Dynamics, Northwestern University 
 
-![Alt text](/Portfolio//projects/concept.png)
+Three scenarios of human on roller coaster have been selected to simulate in Mathematica: 45 degree inclination; climbing to the hilltop and the loop. The G forces have been considered to design the radius of the loop. As the fact that the upper body is normally fixed to the seat on roller coasters, in all the scenarios, the upper body (head, trunk and waist) follows the trajectory of the cart. The lower body, consisting of the thigh and the shank, is simulated as a two-link planar robot of four configuration variables. 
+The statistics of body measures: masses, inertias and lengths of thigh and shank and the length of trunk have been implemented. Important concepts include: Rigid body transformation, Euler-Lagrange equation and Constrained dynamics. 
 
-### Instrumental amplifier and low pass filter 
-The Instrumentation Amplifier design consisted of two stages of the amplifier. The front end is two non-inverting amplifiers coupled together by a common resistor,which is usually called the Gain Stage and the second stage named as Difference Amplifier Stage  is a differential amplifier. The low pass filter was implemented to remove the high frequency noise.
-![Alt text](/Portfolio//projects/circuit1.jpg)
+### 45 degree inclination 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/TVIrwmuwvIU/0.jpg)](http://youtube.com/watch?v=TVIrwmuwvIU)
 
-### Active Notch Filter 
-The 50 Hz powerline noise would be amplified at the mean time when the E.O.G signals would. Therefore, the active notch filter with 50 Hz in the narrow stop band (high Q factor) suited the requirement.
+### climbing to the hilltop
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/AXacMumCkUQ/0.jpg)](http://youtube.com/watch?v=AXacMumCkUQ)
 
+### loop
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/56edRDGh_Gs/0.jpg)](http://youtube.com/watch?v=56edRDGh_Gs)
 

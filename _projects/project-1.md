@@ -1,19 +1,21 @@
 ---
 layout: project
-title: Line Following Robot
-date: 01/2014 to 04/2014
-image: eggrace.png
+title: Baxter Pick and Place
+date: 12/2015
+image: baxter_pose.png
 ---
 
 ## Overview
-For the project, we were given a task to construct a robot to follow a track made of a black tape on white background. The track consisted of various turns. The robot was required to stably carry an egg on a spoon throughout the journey.
+This is the final project for the course: ME499 Embedded System in Robotics, Northwestern University 
 
-### Amplifier design for Analogue to Digital Conversion 
-Implementing the operational amplifiers, we raised up the output voltages of sensors for detecting white as logic one and kept them low as login zero when detecting the black.  For better performance and easy design, we made a decision to raise the voltage to the saturate.
+The Baxter robot autonomously pick objects off of a work surface and place them in a container. The objects can be in multiple shapes, sizes, colors and orientations. In a group of four students, we divided the work into two parts: camera and image processing, robot arm movements. We used git to collaborate our codes:
+ [Github page](https://github.com/therrma2/Baxter-Pick-And-Place)
 
-### Software development for stepper motor 
-A well-structured PIC16F648 embededd C program controlled the Y129 stepper motor.The program reverted back to full step drive control with two coils always being active as this provided the highest level of drive torque for driving the robot. The two stepper motors driven independently required the use of a hardware timer and an interrupt routine. We generated the clock pulses of a software implemented Finite State Machine with Timer0 (RTCC) of the PIC.
 
-![Alt text](/Portfolio//projects/robot.png)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Uo60e5Leo50/0.jpg)](http://youtube.com/watch?v=Uo60e5Leo50)
+
+
+
+
 
 
