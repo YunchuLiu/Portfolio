@@ -12,11 +12,14 @@ Three scenarios of human on roller coaster have been selected to simulate in Mat
 The statistics of body measures: masses, inertias and lengths of thigh and shank and the length of trunk have been implemented. Important concepts include: Rigid body transformation, Euler-Lagrange equation and Constrained dynamics. 
 
 ### 45 degree inclination 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/TVIrwmuwvIU/0.jpg)](http://youtube.com/watch?v=TVIrwmuwvIU)
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/TVIrwmuwvIU" frameborder="0" allowfullscreen></iframe>
 
 ### climbing to the hilltop
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/AXacMumCkUQ/0.jpg)](http://youtube.com/watch?v=AXacMumCkUQ)
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/AXacMumCkUQ" frameborder="0" allowfullscreen></iframe>
 
 ### loop
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/56edRDGh_Gs/0.jpg)](http://youtube.com/watch?v=56edRDGh_Gs)
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/56edRDGh_Gs" frameborder="0" allowfullscreen></iframe>
 
