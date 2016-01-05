@@ -12,6 +12,7 @@ The E.O.G (Electrooculography) is the technique for measuring the potential diff
 
 ### Instrumental amplifier and low pass filter 
 The Instrumentation Amplifier design consisted of two stages of the amplifier. The front end is two non-inverting amplifiers coupled together by a common resistor,which is usually called the Gain Stage and the second stage named as Difference Amplifier Stage  is a differential amplifier. The low pass filter was implemented to remove the high frequency noise.
+
 ![Alt text](/Portfolio//projects/circuit1.jpg)
 
 ### Active Notch Filter 
