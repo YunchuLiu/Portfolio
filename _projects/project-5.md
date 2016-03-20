@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Human Character Mapping
-date: 1/2015 to 03/2015
+date: 01/2015 to 03/2015
 image: human_char.png
 ---
 
