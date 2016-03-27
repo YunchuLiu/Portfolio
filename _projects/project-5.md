@@ -7,29 +7,54 @@ image: human_char.png
 
 ## Overview
 
-The goal of this project is to leverage OpenNI skeleton data from Kinect to map human motion to a rigid body character 
+3D computer animation has been developed and used to create blockbuster films and computer games. The goal of this project is to leverage Kinect-based OpenNI skeleton tracking to animate virtual characters in real-time. A music stand was chosen as the virtual charater and has sufficient DOF for exciting 3D animation.   
+
+Regarding the techniques used in Computer Animation (CA) to decompose virtual characters, most animation systems are based on a representation of a character's skeleton. The skeleton is used to compute the positions and orientations of selected mesh of the charater. In this case, the skeleton was written up in URDF and visualized in RViz under ROS. 
+
+It is very handy to use Microsoft Kinect to produce physical interface. 
+
+<p align="center">
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m98IJ71wfu0" frameborder="0" allowfullscreen></iframe>
 
+</p>
+
 ### Details 
 
-* The music stand has one spherical joint and seven revolute joints, so in total 10 degrees of freedom. The spherical joint connects the body link and one of the three legs.
+* The music stand has one spherical joint and seven revolute joints, so in total 10 degrees of freedom. The spherical joint links the body of the music stand and one of its legs.
 
-  The URDF of the character model was built in RViz. 
+  The [URDF](http://wiki.ros.org/urdf) of the character model was written in [my_robot.urdf](https://github.com/YunchuLiu/Human-Character-Mapping/blob/master/urdf/my_robot.urdf). The spherical joint was created by chaining three revolute joints together. Between every two joints, a 'virtual link' was placed, which can just has a name without other parameters.  
+  
+  The URDF can be visualized in [RViz](http://wiki.ros.org/rviz), the 3D visualization environment for [ROS](http://www.ros.org/about-ros). Setting the value of parameters `gui` to 1 and `self_joint_publisher` to 0 by the following command line:
+  
+  `roslaunch human_char_mapping myrobot.launch gui:=1 self_joint_publisher:=0`
+  
+  A GUI will pop up that allows controlling the values of all the non-fixed joints. 
+  
+<div style="text-align:center">
 
-  ![Alt text](/Portfolio//projects/urdf.png)
+<img src ="/Portfolio//projects/urdf.png" />
 
+</div>
+  
 * Projection of NITE transform data onto the human model.
   
-  Every joint angle of a revolute joint was calculated using NITE translation data from three relevant frames. 
+  The joint angle of a revolute joint such as the angle of the elbow was decided by: 
+  
+  
+  The joint angle of a revolute joint was calculated using NITE translation data from three relevant frames. 
   
   Three Euler angels for the spheical joint were derived from the NITE rotation data between `/right_elbow` and `/right_shoulder` 
 
 * Mapping from human joint angles to character joints is illustrated in the following sketch:
 
   The joint connecting Link 3 and link 7 is a spherical joint and all the others are revolute joint. 
+  
+<div style="text-align:center">
 
-  ![Alt text](/Portfolio//projects/mapping.png)
+<img src ="/Portfolio//projects/mapping.png" />
+
+</div>
 
 * The system was developed in ROS using Python on Linux platform. The code can be found in this [repository](https://github.com/YunchuLiu/Human-Character-Mapping)
  on GitHub. 
