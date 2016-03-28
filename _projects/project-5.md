@@ -39,13 +39,15 @@ It is very handy to use Microsoft Kinect to produce physical interface.
   
 * Projection of NITE transform data onto the human model.
   
-  The joint angle of a revolute joint such as the angle of the elbow was decided by: 
+  The joint angle of a revolute joint such as the angle of the left elbow was decided by: 
   
-  
-  The joint angle of a revolute joint was calculated using NITE translation data from three relevant frames. 
-  
-  Three Euler angels for the spheical joint were derived from the NITE rotation data between `/right_elbow` and `/right_shoulder` 
+  ![Alt text](/Portfolio//projects/formula.png)
 
+  where `Vse` is the vector from the left shoulder to elbow, and `Veh` is the vector from the left elbow to hand.
+  Using [TransformListener](http://wiki.ros.org/tf/Overview/Using%20Published%20Transforms), vectors were obtained by calling `lookupTransform()` from `target_frame` to `source_frame`
+   
+  Three Euler angels for the spheical joint were derived from the NITE rotation data between `/right_elbow` and `/right_shoulder` Since the original data from TransformListener is in Quaternion, the [Transformations.py](https://github.com/ros/geometry/blob/hydro-devel/tf/src/tf/transformations.py) module was used for conversion. 
+   
 * Mapping from human joint angles to character joints is illustrated in the following sketch:
 
   The joint connecting Link 3 and link 7 is a spherical joint and all the others are revolute joint. 
