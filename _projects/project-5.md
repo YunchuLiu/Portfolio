@@ -19,7 +19,13 @@ It is very handy to use Microsoft Kinect to produce physical interface.
 
 </p>
 
-### Details 
+### Pre-requisites
+
+* Download OpenNI on this [site](http://openni.ru/openni-sdk/openni-sdk-history-2/index.html)
+
+* Install [openni_tracker](http://wiki.ros.org/openni_tracker), the main skeleton tracking for ROS 
+
+## Details  
 
 * The music stand has one spherical joint and seven revolute joints, so in total 10 degrees of freedom. The spherical joint links the body of the music stand and one of its legs.
 
@@ -48,9 +54,9 @@ It is very handy to use Microsoft Kinect to produce physical interface.
    
   Three Euler angels for the spheical joint were derived from the NITE rotation data between `/right_elbow` and `/right_shoulder` Since the original data from TransformListener is in Quaternion, the [Transformations.py](https://github.com/ros/geometry/blob/hydro-devel/tf/src/tf/transformations.py) module was used for conversion. 
    
-* Mapping from human joint angles to character joints is illustrated in the following sketch:
-
-  The joint connecting Link 3 and link 7 is a spherical joint and all the others are revolute joint. 
+* Mapping from human joint angles to character joints is illustrated in the following sketch. The joint connecting Link 3 and link 7 is a spherical joint and the rest are revolute joints. 
+  
+  The real-time mapping was completed in [first.py](https://github.com/YunchuLiu/Human-Character-Mapping/blob/master/src/first.py) The utility functions can be sourced in [utility.py](https://github.com/YunchuLiu/Human-Character-Mapping/blob/master/src/utility.py). Once the calibration is completed, typing `roslaunch human_char_mapping myrobot.launch` in another terminal, an RViz will pop up and allows the user to visualize the animation.  
   
 <div style="text-align:center">
 
@@ -62,7 +68,7 @@ It is very handy to use Microsoft Kinect to produce physical interface.
  on GitHub. 
   
   
-### Future work  
+## Future work  
 
 * Map all degrees of human model to a human-like character
 * Animate mapping (Right now mannually) 
