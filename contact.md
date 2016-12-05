@@ -13,7 +13,7 @@ Do not hesitate to contact me if you require further information.
 
 * Phone: (224) 714-9553
 * Email: yunchuliu2016@u.northwestern.edu
-* Address: 1915 Maple Ave., Apt 508A, Evanston, IL, 60201
+* Address: 1120 N LaSalle St., Apt 4E, Chicago, IL, 60610
 
 
 

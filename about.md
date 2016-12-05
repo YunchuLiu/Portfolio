@@ -25,6 +25,10 @@ In the summer before my undergrad final year, I worked as an electronics intern 
   Bachelor of Engineering in Electrical and Automation
 
 ### Professional Experience 
+* Life Fitness, Franklin Park, IL, United States
+
+  M&E Software Validation Intern
+  
 * IMI Norgern, Engineering Advantage Centre, Fradley, Lichfield, United Kingdom
   
   Electronics Intern

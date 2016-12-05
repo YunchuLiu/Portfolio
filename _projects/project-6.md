@@ -1,29 +1,21 @@
 ---
 layout: project
-title: Automatic Detection of Gait Mode for Robotics Prothesis Laboratory 
-date: 10/12/2016
-image: ambulation_lab.png
+title: Android Line Following Robot 
+date: 10/06/2016
+image: tech_cup.JPG
 ---
 
 ## Overview
-In the robot prosthesis lab in RIC (Rehabilitation Institute Chicago), the control of advanced robotics leg uses machine learning algorithms that classify user's activity, specifically, walking on different terrains (level ground, ramp and stairs). To train the algorithms, the data collected should be properly labeled. Currently, the switching mode of the controller on the robotics leg is remotely controlled by a person watching the amputee subject's location and press the button. The goal of this project is to develop a sensing system to locate the user with the prosthesis leg and automatically switch modes based on the user location in the environment (Ambulation lab). 
 
-## Scope
-The student will design and build prototype that meets the following specification. The evaluation of potential sensors, for example, IR sensors , Kinect and Ultrasonic should be documented to summarize the pros/cons of different sensor types and provide guidance for people who may continue this project in the future. A well drawn diagram of the complete system will include the existing
-controller on the robotics leg and show what the system is composed of and their relationships. The mode switching must be completed within the period of one stride, approximately 1 second. The
-system should have zero false positive.
+This is the final project for the course: ME433 Advanced Mechatronics, Northwestern University 
 
-## Evaluation of the potential sensors
-Before looking into the detailed specification of the sensors, several bullet points of requirements were clarified:
+I designed and fabricated a mobile robot using 3D printer and laser cutter and soldered the PCB board after schematic design. I also created an camera app in Android Studio using JAVA and programmed a PIC32 microcontroller in C to receive the image processing results from the phone via USB CDC and perform PWM control on motors.
 
-* Budget: $500 - $1000
-* Frame rate: The switching should be competed within 400 ~ 500ms
-* Resolution/Accuracy: a quarter meter
-* Latency 
-* Coverage: Dimension of the lab room: 30 (length) x 20 (width) x 8.5 (height) feet  Dimension of the equipment: 15/18 (length) x 20 (width) x 8.5 (height) feet  Dimension of the square level ground: 4 x 4 inches  Number of the stairs: 3
-* Robustness: No false positive 
+The android camera app used one slide bar to control the threshold. Since the map is colored in green and brown, the red pixel was considered for track detection. If (255 - red pixels) smaller than threshold value, that pixel was set to black. There were 6 points plotted on the camera app to show the center of mass (COM).
 
-Evaluated sensor candidates that would be a good fit for this application include: Kinect, Ultrasound, IR, Optical motion tracking system and Home surveillance system. [This documentation](https://drive.google.com/file/d/0B58hvswRIFctZDJYbW53YXplUXc/view?usp=sharing) contains the pros/cons for each type. 
+The PWM duty cycle ratio to control motors was adjusted as following: The default is 100% PWM output for both left and right motors. When the COM is larger than 320, I decrease the PWM of the right motor by (COM3-320)/320. When the COM3 is smaller than 320, I decrease the PWM of the right motor by (320-COM3)/320. Therefore, the robot was able to effectively tracking the path. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/czW4-v7VCuc" frameborder="0" allowfullscreen></iframe>
 
 
 
