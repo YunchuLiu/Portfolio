@@ -7,7 +7,7 @@ image: ambulation_lab.png
 
 ## Overview
 
-The main goal of this project was developing a sensing system to locate the user with the prosthesis leg and automatically switch modes based on the user location in the Ambulation Lab.
+The main goal of this project was developing a sensing system to locate the user with the prosthesis leg and automatically switch modes based on the user location in the Ambulation Lab. [The project report](https://docs.google.com/document/d/1p9NUiAjyq4ZqS9eabb7aCLV2O0axVvJ6hDps2XZaHfI/edit?usp=sharing) covers the details of the implementation. 
 
 ## Background 
 
@@ -36,12 +36,19 @@ I ended up with the implementation of webcam-based vision sensing. The right leg
 
 The goal of the test was to determine whether or not the webcam vision sensing triggers the mode switch quickly enough. The timestamps to record when message is received by the TCP/IP server on Wi-Fi key fob should be no later than the latest key press. I was up the stairs with red patch attached at the outside of my right leg. During testing, the webcam was placed on the level ground at bottom or top of the stairs (as illustrated in the Fig 1, 2 and 3). Ten trials were conducted when I transitioned from the stairs to level ground and sixteen trials from the level ground to stairs. Two researchers were operating the key press using the App on the phone.
 
-![Alt text](/Portfolio//projects/stairbottom.png)
-
 ![Alt text](/Portfolio//projects/stairtop.png)
 
+## Result
 
+The figure below shows the average time before the latest key press from two types of trials. The result indicates the vision sensing implementation is feasible to detect transitions and trigger mode switch. 
 
+![Alt text](/Portfolio//projects/timebefore.png)
+
+## Conclusion and future study 
+
+The project proves the feasibility of implementing webcam vision sensing to detect the transition and automate the mode switch of the controller on the prosthesis leg. There has been no triggering of a state change that should not happen and 100% of the transition has been detected.
+
+In the future, more testing should be conducted on different transitions with webcams and Raspberry Pis mounted on multiple positions. Patients wearing prosthesis legs would be recruited to participate in the testing as well as more able-bodied subjects.
 
 
 
