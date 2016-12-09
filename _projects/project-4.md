@@ -2,7 +2,7 @@
 layout: project
 title: Human on Roller Coaster
 date: 12/2015
-image: roller_coaster_ride_abstract_human.jpg
+image: roller.png
 ---
 
 ## Overview
