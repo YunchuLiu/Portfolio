@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Switching Time Optimization 
+title: Roomba Switching Time Optimization 
 date: 10/06/2016
 image: roomba.png
 ---
