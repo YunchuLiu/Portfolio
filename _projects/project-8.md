@@ -6,14 +6,17 @@ image: ambulation_lab.png
 ---
 
 ## Overview
-In the robot prosthesis lab in RIC (Rehabilitation Institute Chicago), the control of advanced robotics leg uses machine learning algorithms that classify user's activity, specifically, walking on different terrains (level ground, ramp and stairs). To train the algorithms, the data collected should be properly labeled. Currently, the switching mode of the controller on the robotics leg is remotely controlled by a person watching the amputee subject's location and press the button. The goal of this project is to develop a sensing system to locate the user with the prosthesis leg and automatically switch modes based on the user location in the environment (Ambulation lab). 
 
-## Scope
-The student will design and build prototype that meets the following specification. The evaluation of potential sensors, for example, IR sensors , Kinect and Ultrasonic should be documented to summarize the pros/cons of different sensor types and provide guidance for people who may continue this project in the future. A well drawn diagram of the complete system will include the existing
-controller on the robotics leg and show what the system is composed of and their relationships. The mode switching must be completed within the period of one stride, approximately 1 second. The
-system should have zero false positive.
+The main goal of this project was developing a sensing system to locate the user with the prosthesis leg and automatically switch modes based on the user location in the Ambulation Lab.
+
+## Background 
+
+In the robot prosthesis lab in RIC (Rehabilitation Institute Chicago), the control of advanced robotics leg uses machine learning algorithms that classify user’s activity, specifically, walking on different terrains (level ground, ramp and stairs). To train the algorithms, the data collected should be properly labeled. Currently, the switching mode of the controller on the robotics leg is remotely controlled manually by a researcher watching the amputee subject’s location and switching the controller. 
+
+In order to automatically collect and label the training data, we would like to automate the selection of activity mode by sensing when the amputee is on the stairs, ramp, or level ground.
 
 ## Evaluation of the potential sensors
+
 Before looking into the detailed specification of the sensors, several bullet points of requirements were clarified:
 
 * Budget: $500 - $1000
@@ -26,6 +29,16 @@ Before looking into the detailed specification of the sensors, several bullet po
 Evaluated sensor candidates that would be a good fit for this application include: Kinect, Ultrasound, IR, Optical motion tracking system and Home surveillance system. [This documentation](https://drive.google.com/file/d/0B58hvswRIFctZDJYbW53YXplUXc/view?usp=sharing) contains the pros/cons for each type. 
 
 ## Design 
+
+I ended up with the implementation of webcam-based vision sensing. The right leg (eventually will be the prosthesis leg) was labeled with a large patch of red tapes. A Standard USB web camera that streams the images in real time on Raspberry Pi 3 was fixedly placed at transitions between level ground and stairs for testing, on the level ground before the first stair or at the top of the stairs. An OpenCV-Python script running on the Raspberry Pi 3 created two threads: one grabbed and stored the current frame and the other processed the frame with red color detection, counted the number of red pixels and sent out a string as a TCP/IP client. The threshold of 1000 to trigger the switch was evaluated by trial and error.
+
+## Testing 
+
+The goal of the test was to determine whether or not the webcam vision sensing triggers the mode switch quickly enough. The timestamps to record when message is received by the TCP/IP server on Wi-Fi key fob should be no later than the latest key press. I was up the stairs with red patch attached at the outside of my right leg. During testing, the webcam was placed on the level ground at bottom or top of the stairs (as illustrated in the Fig 1, 2 and 3). Ten trials were conducted when I transitioned from the stairs to level ground and sixteen trials from the level ground to stairs. Two researchers were operating the key press using the App on the phone.
+
+![Alt text](/Portfolio//projects/stairbottom.png)
+
+![Alt text](/Portfolio//projects/stairtop.png)
 
 
 
