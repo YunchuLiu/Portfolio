@@ -1,7 +1,7 @@
 ---
 layout: project
 title: EOG Eye Tracking
-date: 10/2014 to 03/2015
+date: 03/2015
 image: eog.png
 ---
 
